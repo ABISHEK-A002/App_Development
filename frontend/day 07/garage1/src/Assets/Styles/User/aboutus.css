@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans+Condensed:wght@300&display=swap');
+
+.about-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://www.shutterstock.com/image-photo/website-page-contact-us-email-600nw-1958537320.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.about-us-content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  text-align: center;
+  animation: slideUp 1s ease-out;
+}
+
+.about-us-header h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.about-us-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  background: url('https://as2.ftcdn.net/v2/jpg/02/46/95/73/1000_F_246957352_egLR5ZZFYC8kzZ0WAEJNskRSvwOCnCLH.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: rotateIn 2s linear;
+}
+
+.about-us-text h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.heart {
+  color: pink;
+  animation: pulse 1s infinite;
+}
+
+.note {
+  color: #000;
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+}
+
+.about-us-social-media {
+  margin-top: 20px;
+}
+
+.about-us-social-media a {
+  margin: 0 10px;
+  color: #000;
+  font-size: 36px;
+  transition: color 0.3s ease-in-out;
+}
+
+.about-us-social-media a:hover {
+  color: #007BFF; /* Change to your desired hover color */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
