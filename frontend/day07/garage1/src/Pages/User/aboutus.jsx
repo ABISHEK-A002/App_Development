@@ -2,9 +2,10 @@ import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import '../../Assets/Styles/User/aboutus.css';
 import NavBar from '../../Components/NavBar';
-
+import Footer from '../../Components/Footer';
 const AboutUs = () => {
   return (
+    <div>
     <div className="about-us-container">
      <div > <NavBar /></div>
       <div style={{padding:'60px'}}className="about-us-content">
@@ -41,6 +42,8 @@ const AboutUs = () => {
         </div>
       </div>
     </div>
+      <Footer/>
+      </div>
   );
 };
 

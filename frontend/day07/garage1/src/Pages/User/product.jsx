@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Assets/Styles/User/product.css';
 import NavBar from '../../Components/NavBar';
-
+import Footer from '../../Components/Footer.jsx';
 const products = [
   { img: 'https://m.media-amazon.com/images/I/61hFqIJQefL._AC_UF1000,1000_QL80_.jpg', title: 'Car Air Filter', description: 'check this link', price: 'Rp500.000', link: 'https://www.amazon.in/s?k=Car+Air+Filter' },
   { img: 'https://images.tayna.com/prod-images/1200/Powerline/065-powerline-45-435.jpg', title: 'Car Battery', description: 'check this link', price: 'Rp500.000', link: 'https://www.amazon.in/s?k=Car+Battery' },
@@ -44,6 +44,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+        <Footer/>
     </div>
   );
 };
