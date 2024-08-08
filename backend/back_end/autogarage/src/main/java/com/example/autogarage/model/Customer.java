@@ -16,7 +16,6 @@ public class Customer {
     private String name;
     private String email;
     private String password;
-    private Long locationId;
 
     @OneToMany(mappedBy = "customer")
     private Set<Post> posts;
@@ -51,14 +50,6 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Long getLocationId() {
-        return locationId;
-    }
-
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
     }
 
     public Set<Post> getPosts() {

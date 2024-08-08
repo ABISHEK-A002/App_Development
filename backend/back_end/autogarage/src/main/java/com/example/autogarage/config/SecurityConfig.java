@@ -14,7 +14,7 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .authorizeRequests(auth -> auth
-                .requestMatchers("/customers", "/posts", "/comments").permitAll()  // Allow public access to /api/job/**
+                .requestMatchers("/customers/**", "/posts/**", "/comments/**","/products/**","/garages/**").permitAll()  // Allow public access to /api/job/**
                 .anyRequest().authenticated());
         return http.build();
     }

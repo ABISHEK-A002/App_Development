@@ -1,6 +1,8 @@
 package com.example.autogarage.model;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,7 @@ public class Post {
     private Long postId;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
 
