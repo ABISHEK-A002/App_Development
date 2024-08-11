@@ -15,14 +15,19 @@ public class Garage {
     private String name;
     private String garageName;
     private Double rating;
-    private Long locationId;
-    private String addressId;
     private String doorNo;
     private String street;
     private String town;
     private String city;
     private String state;
     private String pinCode;
+    private String email;
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public Long getGarageId() {
         return garageId;
     }
@@ -52,18 +57,6 @@ public class Garage {
     }
     public void setRating(Double rating) {
         this.rating = rating;
-    }
-    public Long getLocationId() {
-        return locationId;
-    }
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
-    }
-    public String getAddressId() {
-        return addressId;
-    }
-    public void setAddressId(String addressId) {
-        this.addressId = addressId;
     }
     public String getDoorNo() {
         return doorNo;

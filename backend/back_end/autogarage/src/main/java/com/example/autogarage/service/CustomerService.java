@@ -13,7 +13,7 @@ import java.util.Optional;
 public class CustomerService {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    public CustomerRepository customerRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -25,7 +25,9 @@ public class CustomerService {
     public Optional<Customer> getCustomerById(Long id) {
         return customerRepository.findById(id);
     }
-
+    public List<Customer> getCustomername(String name) {
+        return customerRepository.findByName(name);
+    }
     public Customer saveCustomer(Customer customer) {
         customer.setPassword(passwordEncoder.encode(customer.getPassword()));
         return customerRepository.save(customer);
@@ -45,8 +47,21 @@ public class CustomerService {
             return null;
         }
     }
+    public boolean validateCustomer(String email, String password) {
+        Customer customer = customerRepository.findByEmail(email);
+        
+        if (customer != null && customer.getPassword() != null && customer.getPassword().equals(password)) {
+            return true;
+        }
+        return false;
+    }
 
-    public void deleteCustomer(Long id) {
-        customerRepository.deleteById(id);
+    public boolean deleteCustomer(Long id) {
+        if (customerRepository.existsById(id)) {
+            customerRepository.deleteById(id);
+            return true; // Successfully deleted
+        } else {
+            return false; // Customer not found
+        }
     }
 }

@@ -47,7 +47,6 @@ public class PostService {
     public Post updatePost(Long id, Post postDetails) {
         Post post = postRepository.findById(id).orElse(null);
         if (post != null) {
-            // post.setCustomerId(postDetails.getCustomerId());
             post.setQuestion(postDetails.getQuestion());
             post.setTimestamp(postDetails.getTimestamp());
             return postRepository.save(post);

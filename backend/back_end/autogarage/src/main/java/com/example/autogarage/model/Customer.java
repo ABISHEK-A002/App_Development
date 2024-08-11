@@ -16,6 +16,24 @@ public class Customer {
     private String name;
     private String email;
     private String password;
+    private String address;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String contact;
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
 
     @OneToMany(mappedBy = "customer")
     private Set<Post> posts;

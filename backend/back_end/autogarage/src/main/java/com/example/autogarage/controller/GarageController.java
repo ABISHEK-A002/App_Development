@@ -14,27 +14,32 @@ public class GarageController {
 
     @Autowired
     private GarageService garageService;
-
+    
+    @CrossOrigin(origins = "http://localhost:3000") 
     @GetMapping
     public List<Garage> getAllGarages() {
         return garageService.getAllGarages();
     }
-
+    
+    @CrossOrigin(origins = "http://localhost:3000") 
     @GetMapping("/{id}")
     public ResponseEntity<Garage> getGarageById(@PathVariable Long id) {
         Optional<Garage> garage = garageService.getGarageById(id);
         return garage.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
-
+    
+    @CrossOrigin(origins = "http://localhost:3000") 
     @PostMapping
     public Garage createGarage(@RequestBody Garage garage) {
         return garageService.saveGarage(garage);
     }
-
+    
+    @CrossOrigin(origins = "http://localhost:3000") 
     @DeleteMapping("/{id}")
     public void deleteGarage(@PathVariable Long id) {
         garageService.deleteGarage(id);
     }
+    @CrossOrigin(origins = "http://localhost:3000") 
     @PutMapping("/{id}")
     public ResponseEntity<Garage> updateGarage(@PathVariable Long id, @RequestBody Garage garageDetails) {
         Garage updatedGarage = garageService.updateGarage(id, garageDetails);

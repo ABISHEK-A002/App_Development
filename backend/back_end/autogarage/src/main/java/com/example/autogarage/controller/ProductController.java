@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +23,12 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
-
+    @CrossOrigin(origins = "http://localhost:3000") 
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
-
+    @CrossOrigin(origins = "http://localhost:3000") 
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         Product product = productService.getProductById(id);
@@ -37,12 +38,12 @@ public class ProductController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:3000") 
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         return productService.createProduct(product);
     }
-
+    @CrossOrigin(origins = "http://localhost:3000") 
     @PutMapping("/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product productDetails) {
         Product updatedProduct = productService.updateProduct(id, productDetails);
@@ -52,7 +53,7 @@ public class ProductController {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @CrossOrigin(origins = "http://localhost:3000") 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);

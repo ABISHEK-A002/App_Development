@@ -35,7 +35,6 @@ public class GarageService {
             garage.setOwnerId(garageDetails.getOwnerId());
             garage.setName(garageDetails.getName());
             garage.setRating(garageDetails.getRating());
-            garage.setAddressId(garageDetails.getAddressId());
             return garageRepository.save(garage);
         }
         return null;
