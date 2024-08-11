@@ -16,8 +16,8 @@ public class Customer {
     private String name;
     private String email;
     private String password;
-    private String contact;
     private String address;
+    private String contact;
     @OneToMany(mappedBy = "customer")
     private Set<Post> posts;
 
@@ -61,19 +61,19 @@ public class Customer {
         this.posts = posts;
     }
 
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

@@ -21,6 +21,13 @@ public class Garage {
     private String city;
     private String state;
     private String pinCode;
+    private String email;
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
     public Long getGarageId() {
         return garageId;
     }
